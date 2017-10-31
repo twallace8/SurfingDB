@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-SurfingMvC-20170425123945.mdf;Initial Catalog=aspnet-SurfingMvC-20170425123945;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\SurfingMvC\\SurfingMvC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="surfDBContext-Web.config Connection String" description="surfDBContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\MSSQLLocalDB; Initial Catalog=surfDBContext-20170425124415; Integrated Security=True; MultipleActiveResultSets=True; AttachDbFilename=|DataDirectory|surfDBContext-20170425124415.mdf" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\SurfingMvC\\SurfingMvC\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='surfDBContext']/@connectionString" />
+  </parameter>
+</parameters>

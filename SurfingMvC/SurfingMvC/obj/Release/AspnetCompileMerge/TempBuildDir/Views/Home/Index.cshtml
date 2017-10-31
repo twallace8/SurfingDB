@@ -1,0 +1,82 @@
+﻿@model IEnumerable<SurfingMvC.Models.surf>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    @*<h2>Index</h2>*@
+
+    <br />
+    <br />
+    <br />
+    <p>
+        @*@Html.ActionLink("Create New", "Create")*@
+
+        @Html.ActionLink("Create New", "Create")
+
+        @using (Html.BeginForm())
+        {
+        <p>
+            @Html.TextBox("searchstring")  Continent: @Html.DropDownList("continent", "All")<br />
+            <br /><input type="submit" value="Search" , class="btn btn-primary btn-sm" />
+        </p>
+        }
+
+        </p>
+
+            <table class="table">
+                <tr class="table-header">
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.Picture)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.Location)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.Continent)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.Wave_Size)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.Wave_type)
+                    </th>
+                    <th class="text-center">
+                        @Html.DisplayNameFor(model => model.Level)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+
+                {       
+                    <tr>
+                        <td class="text-center">
+                           <img src="@Url.Content(item.Picture)" height="100" width="150" class="small-picture-border"/>
+                         @*@Html.DisplayFor(modelItem => item.Picture)*@   
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Location)
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(modelItem => item.Continent)
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(modelItem => item.Wave_Size)
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(modelItem => item.Wave_type)
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(modelItem => item.Level)
+                        </td>
+                        <td class="text-center">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
